@@ -1,0 +1,56 @@
+<%= form_for(@client, html: { onsubmit: 'updateClient(event, this)' }, method: 'put') do |f| %>
+  <div class="container">
+    <div>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <div>
+      <%= f.label :zip %>
+      <%= f.number_field :zip %>
+    </div>
+    <div>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+    <div>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+    </div>
+    <div>
+      <%= f.label :tel %>
+      <%= f.number_field :tel %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+    <div>
+      <%= f.label :comments %>
+      <%= f.text_area :comments %>
+    </div>
+    <div>
+      <%= f.label :offer %>
+      <%= f.number_field :offer %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.number_field :price %>
+    </div>
+    <div>
+      <%= f.label :status %>
+      <%= f.select :status, ['New', 'Waiting for answer', 'On Hold', 'Working on'] %>
+    </div>
+    <div>
+      <%= f.submit 'Save' %>
+      <%= f.submit 'Cancel', onclick: 'cancelClientEdit(event)' %>
+    </div>
+  </div>
+<% end %>

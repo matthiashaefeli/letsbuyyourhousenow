@@ -5,7 +5,7 @@ class Client < ApplicationRecord
   validate :validate_email
 
   def validate_email
-    errors.add(:base, 'Please add a valid email address') if (email =~ /^.+@.+$/).nil?
+    errors.add(:base, 'Please add a valid email address') if email.length > 0 && (email =~ /^.+@.+$/).nil?
   end
 
   def validate_names

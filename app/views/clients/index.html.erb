@@ -1,6 +1,12 @@
 <h1>Clients</h1>
-<%= link_to 'New Client', new_client_path %>
-<div>
+<%= link_to 'Add New Client', '#', onclick: 'addNewClientForm(event)', id: 'newClientFormLink' %>
+<div class="clientForm"></div>
+  <div id="clientResponse">
+    <p>The new Client was created</p>
+    <p><%= link_to 'Clients', clients_path %></p>
+    <p><%= link_to 'Home', root_path %></p>
+  </div>
+<div class="clientsTable">
   <table>
     <thead>
       <tr>
@@ -9,6 +15,7 @@
         <td>Email</td>
         <td>Tel</td>
         <td>Address</td>
+        <td>Status</td>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +26,7 @@
           <td><%= client.email %></td>
           <td><%= client.tel %></td>
           <td><%= client.address %></td>
+          <td><%= client.status %></td>
         </tr>
       <% end %>
     </tbody>

@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_173043) do
     t.bigint "offer"
     t.bigint "price"
     t.string "email"
-    t.boolean "new", default: true
+    t.string "status", default: "New"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

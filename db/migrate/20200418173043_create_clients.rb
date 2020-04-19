@@ -13,7 +13,7 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.integer :offer, limit: 8
       t.integer :price, limit: 8
       t.string :email
-      t.boolean :new, default: true
+      t.string :status, default: 'New'
 
       t.timestamps
     end
