@@ -7,12 +7,13 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :city
       t.integer :zip
       t.string :state
-      t.integer :tel
+      t.integer :tel, limit: 8
       t.boolean :active, default: true
       t.text :comments
-      t.integer :offer
-      t.integer :price
+      t.integer :offer, limit: 8
+      t.integer :price, limit: 8
       t.string :email
+      t.boolean :new, default: true
 
       t.timestamps
     end

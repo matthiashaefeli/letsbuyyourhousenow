@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Laura</title>
+    <title>Let's Buy Your House Now</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <div class="navBar">
+      <%# if @current_user %>
+      <div><%= link_to 'SignOut', destroy_user_session_path, method: :destroy %></div>
+      <div><%= link_to 'Clients', clients_path %></div>
+      <%# else %>
+      <div><%= link_to 'SignIn', new_user_session_path %></div>
+      <div><%= link_to 'SignUp', new_user_registration_path %></div>
+      <%# end %>
+    </div>
     <%= yield %>
   </body>
 </html>
