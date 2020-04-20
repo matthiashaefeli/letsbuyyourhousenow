@@ -9,7 +9,7 @@ window.addClient = function(e,form) {
     },
     success: function(response) {
       if (response.message == 'saved') {
-        $('#new_client').hide();
+        $('.clientForm').hide();
         $('#clientResponse').show();
         $('#newClientCancelButton').hide();
       } else {

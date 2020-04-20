@@ -8,21 +8,113 @@
   justify-content: space-around;
 }
 
+.home {
+  background: url(/images/house.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
 .title {
+  color: white;
+  padding: 25px;
   margin: auto;
   text-align: center;
 }
 
 .clientForm {
   text-align: center;
+  width: 40%;
+  margin: auto;
+}
+
+.clientForm > h1 {
+  margin-bottom: -1px;
+  background-color: black;
+  color: yellow;
+}
+
+#client_tel,
+#client_email,
+#client_address,
+#client_city,
+#client_state,
+#client_zip {
+  height: 2em;
+  margin: 10px 0;
+}
+
+#client_first_name,
+#client_last_name {
+  margin: 30px 0 10px 0;
+  height: 2em;
+}
+
+#client_address {
+  width: 260px;
+}
+
+#client_city {
+  width: 100px;
+}
+
+#client_state {
+  width: 90px;
+}
+
+#client_zip {
+  width: 55px;
+}
+
+#clientSubmit {
+  width: 10em;
+  background-color: yellow;
+  border: none;
+  color: black;
+  font-size: 15px;
+  border-radius: 8px;
+  height: 50px;
+  margin: 30px 0;
+}
+
+#clientSubmit:hover {
+  background-color: green;
+}
+
+
+.clientForm > form {
+  background-color: rgba(128,128,128,0.6);
 }
 
 #clientResponse {
   display: none;
   text-align: center;
+  background-color: black;
+  color: yellow;
+  width: 40%;
+  margin: auto;
 }
 
 .errorDiv {
   display: none;
+  text-align: center;
+  background-color: rgba(128,128,128,0.6);
+  width: 20%;
+  margin: auto;
+  color: white;
+}
+
+.howItWorks {
+  text-align: center;
+}
+
+.howItWorksImages {
+  width: 100px;
+  height: 100px;
+}
+
+.footer {
   text-align: center;
 }

@@ -1,39 +1,22 @@
 <%= form_for(@client, html: { onsubmit: 'addClient(event, this)' }) do |f| %>
-  <div class="container">
+  <div>
     <div>
-      <div><%= f.label :first_name %></div>
-      <div><%= f.text_field :first_name %></div>
+      <%= f.text_field :first_name, placeholder: 'First Name' %>
+      <%= f.text_field :last_name, placeholder: 'Last Name' %>
     </div>
     <div>
-      <div><%= f.label :last_name %></div>
-      <div><%= f.text_field :last_name %></div>
+      <%= f.text_field :address, placeholder: 'Street' %>
     </div>
     <div>
-      <div><%= f.label :address %></div>
-      <div><%= f.text_field :address %></div>
+      <%= f.text_field :city, placeholder: 'City' %>
+      <%= f.text_field :state, placeholder: 'State' %>
+      <%= f.number_field :zip, placeholder: 'Zip' %>
     </div>
     <div>
-      <div><%= f.label :zip %></div>
-      <div><%= f.number_field :zip %></div>
+      <%= f.number_field :tel, placeholder: 'Tel' %> <%= f.email_field :email, placeholder: 'Email' %>
     </div>
     <div>
-      <div><%= f.label :city %></div>
-      <div><%= f.text_field :city %></div>
-    </div>
-    <div>
-      <div><%= f.label :state %></div>
-      <div><%= f.text_field :state %></div>
-    </div>
-    <div>
-      <div><%= f.label :tel %></div>
-      <div><%= f.number_field :tel %></div>
-    </div>
-    <div>
-      <div><%= f.label :email %></div>
-      <div><%= f.email_field :email %></div>
-    </div>
-    <div>
-      <div><%= f.submit 'Save', id: 'clientSubmit' %></div>
+      <div><%= f.submit 'Get Your Offer', id: 'clientSubmit' %></div>
     </div>
   </div>
 <% end %>
