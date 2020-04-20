@@ -2,7 +2,11 @@ class ClientsController < ApplicationController
   layout 'client'
 
   def index
-    @clients = Client.where(active: true)
+    @clients = Client.where(status: @status)
+  end
+
+  def clients
+    binding.pry
   end
 
   def new

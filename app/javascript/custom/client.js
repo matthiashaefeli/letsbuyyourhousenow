@@ -83,3 +83,14 @@ window.cancelCLientNew = function() {
   $('.clientForm').html('');
   $('.clientsTableDiv').show();
 }
+
+window.filterClientsTable = function(select) {
+  debugger;
+  // not sure what to do here
+  // const selected = $(select).val();
+  // $.ajax({
+  //   url: 'clients',
+  //   method: 'get',
+  //   data: { status: selected }
+  // })
+}

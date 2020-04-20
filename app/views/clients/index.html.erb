@@ -2,6 +2,7 @@
 <div class="newClientLinkDiv">
   <%= link_to 'Add New Client', '#', onclick: 'addNewClientForm(event)', id: 'newClientFormLink' %>
 </div>
+<div class="clientsSelect">Show Clients with status: <%= select_tag "clientFilter", options_for_select(Client::STATUS_ARRAY), onchange: 'filterClientsTable(this)' %></div>
 <div class="clientForm"></div>
   <div id="clientResponse">
     <p>The new Client was created</p>

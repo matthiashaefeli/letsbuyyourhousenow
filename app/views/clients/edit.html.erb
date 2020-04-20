@@ -96,7 +96,7 @@
           <%= f.label :status %>
         </td>
         <td>
-          <%= f.select :status, ['New', 'Waiting for answer', 'On Hold', 'Working on'], value: @client.status %>
+          <%= f.select :status, Client::STATUS_ARRAY, value: @client.status %>
         </td>
       </tr>
       <tr>

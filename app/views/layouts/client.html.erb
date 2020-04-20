@@ -14,7 +14,7 @@
       <% if current_user && current_user.active && current_user.admin %>
         <div><%= link_to 'SignOut', destroy_user_session_path, method: :delete %></div>
         <div><%= link_to 'Clients', clients_path %></div>
-        <div><%= link_to 'Resources', root_path %></div>
+        <div><%= link_to 'Resources', resources_path %></div>
       <% end %>
     </div>
     <div class='clientHome'>
