@@ -57,8 +57,9 @@ window.updateClient = function(e, form) {
     method: form.method,
     data: $(form).serialize(),
     success: function(response) {
-      $('.showClient').html(response).show();
-      $('.editClient').html('');
+      $('.clientHome').html(response);
+      // $('.showClient').html(response).show();
+      // $('.editClient').html('');
     }
   })
 }
@@ -72,7 +73,7 @@ window.addNewClientForm = function(e) {
       const cancelButton = $("<button id='newClientCancelButton' onclick='cancelCLientNew()'>Cancel</button>")
       $('.clientForm').html(response).append(cancelButton);
       $('#newClientFormLink').hide();
-      $('.clientsTable').hide();
+      $('.clientsTableDiv').hide();
     }
   })
 }
@@ -80,5 +81,5 @@ window.addNewClientForm = function(e) {
 window.cancelCLientNew = function() {
   $('#newClientFormLink').show();
   $('.clientForm').html('');
-  $('.clientsTable').show();
+  $('.clientsTableDiv').show();
 }

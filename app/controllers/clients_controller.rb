@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+  layout 'client'
+
   def index
     @clients = Client.where(active: true)
   end
@@ -29,14 +31,18 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client = Client.find(params[:id])
-    @client.update_attributes(client_params)
-    render 'show', layout: false
+    @client = Client.find(params[:client_id])
+    @client.update_attributes(edit_client_params)
+    render 'show'
   end
 
   private
 
   def client_params
-    params.require(:client).permit(:first_name, :last_name, :tel, :address, :email, :city, :state, :zip, :comments, :offer, :price, :status, :new)
+    params.require(:client).permit(:first_name, :last_name, :tel, :address, :email, :city, :state, :zip)
+  end
+
+  def edit_client_params
+    params.require(:editclient).permit(:first_name, :last_name, :tel, :address, :email, :city, :state, :zip, :comments, :offer, :price, :status, :new)
   end
 end

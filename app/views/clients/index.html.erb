@@ -1,23 +1,25 @@
-<h1>Clients</h1>
-<%= link_to 'Add New Client', '#', onclick: 'addNewClientForm(event)', id: 'newClientFormLink' %>
+<h1 class="clientsTitle">Clients</h1>
+<div class="newClientLinkDiv">
+  <%= link_to 'Add New Client', '#', onclick: 'addNewClientForm(event)', id: 'newClientFormLink' %>
+</div>
 <div class="clientForm"></div>
   <div id="clientResponse">
     <p>The new Client was created</p>
     <p><%= link_to 'Clients', clients_path %></p>
     <p><%= link_to 'Home', root_path %></p>
   </div>
-<div class="clientsTable">
-  <table>
+<div class="clientsTableDiv">
+  <table class="clientsTable">
     <thead>
       <tr>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Email</td>
-        <td>Tel</td>
-        <td>Address</td>
-        <td>Status</td>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Tel</th>
+        <th>Address</th>
+        <th>Status</th>
       </tr>
-    </thead>
+    </th>
     <tbody>
       <% @clients.each do |client| %>
         <tr>

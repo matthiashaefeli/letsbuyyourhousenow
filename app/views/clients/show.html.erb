@@ -1,14 +1,46 @@
 <div class="showClient">
-  <div><%= @client.first_name %> <%= @client.last_name %></div>
-  <div><%= @client.address %></div>
-  <div><%= @client.zip %> <%= @client.city %> <%= @client.state %></div>
-  <div><%= @client.tel %></div>
-  <div><%= @client.email %></div>
-  <div><%= @client.active ? 'Active' : 'Not Active' %></div>
-  <div><%= @client.status %></div>
-  <div>Comments: <%= @client.comments %></div>
-  <div>Offer: <%= @client.offer %></div>
-  <div>Price: <%= @client.price %></div>
+  <table class="clientDetailsTable">
+    <tr>
+      <td class="fieldLabel">Name:</td>
+      <td class="fieldValue"><%= @client.first_name %> <%= @client.last_name %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Address:</td>
+      <td class="fieldValue"><%= @client.address %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">City:</td>
+      <td class="fieldValue"><%= @client.zip %> <%= @client.city %> <%= @client.state %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Tel:</td>
+      <td class="fieldValue"><%= @client.tel %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Email:</td>
+      <td class="fieldValue"><%= @client.email %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Client is active:</td>
+      <td class="fieldValue"><%= @client.active ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Client status:</td>
+      <td class="fieldValue"><%= @client.status %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel" valign="top">Comments:</td>
+      <td class="fieldValue"><%= @client.comments %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Offer:</td>
+      <td class="fieldValue"><%= @client.offer %></td>
+    </tr>
+    <tr>
+      <td class="fieldLabel">Price:</td>
+      <td class="fieldValue"><%= @client.price %></td>
+    </tr>
+  </table>
 </div>
 <div class="editClient"></div>
-<div><%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: "editClientLink" %></div>
+<%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: "editClientLink" %>
