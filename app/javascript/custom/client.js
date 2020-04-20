@@ -13,11 +13,17 @@ window.addClient = function(e,form) {
         $('#clientResponse').show();
         $('#newClientCancelButton').hide();
       } else {
-        response.error.forEach(element => {
-          const p = $('<p>'+ element + '</p>');
-          $('.errorDiv').append(p);
-        });
-        $('.errorDiv').show();
+        $('#client_first_name, #client_last_name, #client_email, #client_tel').css('background-color', 'white');
+        if (response.error.includes('first_name')) {
+          $('#client_first_name').css('background-color', 'yellow').focus();
+        } else if (response.error.includes('last_name')) {
+          $('#client_last_name').css('background-color', 'yellow').focus();
+        } else if (response.error.includes('email_or_tel')) {
+          $('#client_email').css('background-color', 'yellow').focus();
+          $('#client_tel').css('background-color', 'yellow').focus();
+        } else if (response.error.includes('email')) {
+          $('#client_email').css('background-color', 'yellow').attr('placeholder', 'Please add a valid email').focus();
+        }
         $('#clientSubmit').attr('disabled', false);
       }
     }

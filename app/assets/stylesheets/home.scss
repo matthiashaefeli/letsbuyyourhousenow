@@ -31,6 +31,7 @@
 }
 
 .clientForm > h1 {
+  padding: 7px;
   margin-bottom: -1px;
   background-color: black;
   color: yellow;
@@ -80,7 +81,16 @@
 }
 
 #clientSubmit:hover {
-  background-color: green;
+  animation-name: background-color-size;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes background-color-size {
+  100% {
+    background-color: yellowgreen;
+    transform: scale(1.2)
+  }
 }
 
 
