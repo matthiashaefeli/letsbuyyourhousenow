@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .home {
-  background: url(/images/house.png) no-repeat center center fixed; 
+  background: url(/images/houses.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,12 +13,13 @@
 
 .title {
   color: white;
-  padding: 25px;
+  padding: 3px;
   margin: auto;
   text-align: center;
 }
 
 .clientForm {
+  padding-top: 30px;
   text-align: center;
   width: 40%;
   margin: auto;

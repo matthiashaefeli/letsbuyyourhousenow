@@ -1,4 +1,4 @@
-<%= form_for(@client, html: { onsubmit: 'addClient(event, this)' }) do |f| %>
+<%= form_for(@client, html: { onsubmit: 'addClient(event, this)' }, data: { no_turbolink: true, remote: true }) do |f| %>
   <div>
     <div>
       <%= f.text_field :first_name, placeholder: 'First Name' %>
