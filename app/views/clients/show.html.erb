@@ -43,6 +43,10 @@
   </table>
 </div>
 <div class="editClient"></div>
-<%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'linksDesign' %><br>
-<%= link_to 'Delete this Client', client_path(@client), method: 'delete', class: 'linksDesign backLink', data: { confirm: 'Are you sure?' } %><br>
+<%= link_to('#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'linksDesign') do %>
+  <span class="linksDesign"><i class="fas fa-user-edit"></i> Edit Client</span>
+<% end %>
+<%= link_to(client_path(@client), class: 'linksDesign', id: 'deleteClientLink', method: 'delete', data: { confirm: 'Are you sure?' }) do %><br>
+  <span class='linksDesign backLink'><i class="far fa-trash-alt fa-xs" style="margin-top=1px;"></i> Delete Client</span>
+<% end %><br>
 <%= link_to 'Back', clients_path, class: 'linksDesign backLink' %>

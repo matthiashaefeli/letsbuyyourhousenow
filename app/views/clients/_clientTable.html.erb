@@ -11,7 +11,11 @@
     <tbody>
       <% @clients.each do |client| %>
         <tr>
-          <td><%= link_to client.first_name, client_path(client.id) %></td>
+          <td>
+            <%= link_to(client_path(client.id)) do %>
+              <i class="far fa-eye fa-xs"></i> <%= client.first_name %>
+            <% end %>
+          </td>
           <td><%= client.first_name %></td>
           <td><%= client.email %></td>
           <td><%= client.tel %></td>

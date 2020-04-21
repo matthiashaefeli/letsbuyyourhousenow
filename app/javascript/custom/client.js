@@ -33,8 +33,7 @@ window.editClient = function(e, clientId) {
     url: clientId + '/edit',
     method: 'get',
     success: function(response) {
-      $('#editClientLink').hide();
-      $('.showClient').hide();
+      $('#deleteClientLink, #editClientLink, .showClient').hide();
       $('.editClient').html(response);
     }
   })
@@ -42,8 +41,7 @@ window.editClient = function(e, clientId) {
 
 window.cancelClientEdit = function(e) {
   e.preventDefault();
-  $('#editClientLink').show();
-  $('.showClient').show();
+  $('#deleteClientLink, #editClientLink, .showClient').show();
   $('.editClient').html('');
 }
 
@@ -67,17 +65,15 @@ window.addNewClientForm = function(e) {
     success: function(response) {
       const cancelButton = $("<button id='newClientCancelButton' onclick='cancelCLientNew()'>Cancel</button>")
       $('.clientForm').html(response).append(cancelButton);
-      $('#newClientFormLink').hide();
-      $('.clientsTableDiv').hide();
+      $('#newClientFormLink, .clientsTableDiv').hide();
       $('#clientSubmit').val('Save');
     }
   })
 }
 
 window.cancelCLientNew = function() {
-  $('#newClientFormLink').show();
+  $('#newClientFormLink, .clientsTableDiv').show();
   $('.clientForm').html('');
-  $('.clientsTableDiv').show();
 }
 
 window.filterClientsTable = function(select) {
