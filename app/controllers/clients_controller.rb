@@ -2,11 +2,12 @@ class ClientsController < ApplicationController
   layout 'client'
 
   def index
-    @clients = Client.where(status: @status)
+    @clients = Client.where(status: 'New')
   end
 
-  def clients
-    binding.pry
+  def client_entries
+    @clients = Client.where(status: params[:status])
+    render partial: 'clientTable'
   end
 
   def new

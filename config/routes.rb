@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :clients
   devise_for :users
   root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'client/client_entries', to: 'clients#client_entries'
 end

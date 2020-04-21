@@ -43,4 +43,5 @@
   </table>
 </div>
 <div class="editClient"></div>
-<%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: "editClientLink" %>
+<%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'clientLinks' %><br>
+<%= link_to 'Back', clients_path, class: 'clientLinks backLink' %>

@@ -1,0 +1,22 @@
+<div class="clientsTableDiv">
+  <table class="clientsTable">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Tel</th>
+      </tr>
+    </th>
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= link_to client.first_name, client_path(client.id) %></td>
+          <td><%= client.first_name %></td>
+          <td><%= client.email %></td>
+          <td><%= client.tel %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

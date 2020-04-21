@@ -3,7 +3,7 @@ class Client < ApplicationRecord
   validate :email_or_tel
   validate :validate_email
 
-  STATUS_ARRAY = ['New', 'Waiting for answer', 'On Hold', 'Working on']
+  STATUS_ARRAY = ['New', 'Waiting for answer', 'On Hold', 'Working on', 'Offer sent', 'Deal', 'Finished']
 
   def validate_email
     errors.add(:base, 'email') if email.length > 0 && (email =~ /^.+@.+$/).nil?

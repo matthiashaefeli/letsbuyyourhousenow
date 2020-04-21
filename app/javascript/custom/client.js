@@ -74,6 +74,7 @@ window.addNewClientForm = function(e) {
       $('.clientForm').html(response).append(cancelButton);
       $('#newClientFormLink').hide();
       $('.clientsTableDiv').hide();
+      $('#clientSubmit').val('Save');
     }
   })
 }
@@ -85,12 +86,14 @@ window.cancelCLientNew = function() {
 }
 
 window.filterClientsTable = function(select) {
-  debugger;
-  // not sure what to do here
-  // const selected = $(select).val();
-  // $.ajax({
-  //   url: 'clients',
-  //   method: 'get',
-  //   data: { status: selected }
-  // })
+  const selected = $(select).val();
+  $.ajax({
+    url: 'client/client_entries',
+    method: 'get',
+    data: { status: selected },
+    success: function(response) {
+      $('.clientsTableDiv').remove();
+      $(response).insertAfter('#clientResponse');
+    }
+  })
 }
