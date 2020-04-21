@@ -92,10 +92,11 @@
 }
 
 #clientResponse {
+  padding: 10px;
   display: none;
   text-align: center;
-  background-color: black;
-  color: yellow;
+  background: linear-gradient(53deg, #a5fdff, #f3ffff);
+  color: black;
   width: 40%;
   margin: auto;
 }

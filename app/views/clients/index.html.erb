@@ -5,8 +5,7 @@
 <div class="clientsSelect">Show Clients with status: <%= select_tag "clientFilter", options_for_select(Client::STATUS_ARRAY), onchange: 'filterClientsTable(this)' %></div>
 <div class="clientForm"></div>
 <div id="clientResponse">
-  <p>The new Client was created</p>
-  <p><%= link_to 'Clients', clients_path %></p>
-  <p><%= link_to 'Home', root_path %></p>
+  <p>The new Client was added!</p>
+  <p>Go to <%= link_to 'Clients', clients_path, style: 'text-decoration:none;' %></p>
 </div>
 <%= render partial: 'clientTable' %>
