@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   layout 'client'
-  before_action :authorization
+  before_action :authorization, except: :create
 
   def index
     @clients = Client.where(status: 'New')
