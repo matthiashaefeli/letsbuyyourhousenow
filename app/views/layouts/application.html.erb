@@ -12,12 +12,6 @@
   <body>
     <%= yield %>
     <div class="footer">
-      <% if current_user %>
-        <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
-        <div><%= link_to 'Clients', clients_path %></div>
-      <% else %>
-        <%= link_to 'Sign In', new_user_session_path %>
-      <% end %>
     </div>
   </body>
 </html>

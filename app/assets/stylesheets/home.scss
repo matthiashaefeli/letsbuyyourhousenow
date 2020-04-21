@@ -133,3 +133,12 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.wrapper>div>p>a {
+  color: black;
+  text-decoration: none;
+}
+
+.wrapper>div>p>a:hover {
+  color: green;
+}

@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   layout 'client'
+  before_action :authorization
 
   def index
     @clients = Client.where(status: 'New')
@@ -42,6 +43,12 @@ class ClientsController < ApplicationController
   end
 
   private
+
+  def authorization
+    if current_user.nil?
+      redirect_to root_path
+    end
+  end
 
   def client_params
     params.require(:client).permit(:first_name, :last_name, :tel, :address, :email, :city, :state, :zip)
