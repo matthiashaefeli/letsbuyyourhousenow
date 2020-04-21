@@ -1,0 +1,5 @@
+<tr>
+  <td><%= @resource.name %>:</td>
+  <td><%= link_to @resource.url, @resource.url, target: '_blank' %> </td>
+  <td><%= link_to 'Delete', {}, class: 'linksDesign', onclick: "deleteResource(event, #{@resource.id}, this)" %></td>
+</tr>

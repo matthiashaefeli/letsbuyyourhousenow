@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_215933) do
   end
 
   create_table "resources", force: :cascade do |t|
+    t.string "name"
+    t.text "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

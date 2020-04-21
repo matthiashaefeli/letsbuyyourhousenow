@@ -1,1 +1,15 @@
 <h1 class="clientsTitle">Resources</h1>
+<div class="newClientLinkDiv">
+  <%= link_to 'Add New Resource', '#', onclick: 'addNewResourceForm(event)', class: 'linksDesign' %>
+</div>
+<div>
+  <table class="resourcesTable">
+    <% @resources.each do |r| %>
+      <tr>
+        <td><%= r.name %>:</td>
+        <td><%= link_to r.url, r.url, target: '_blank' %> </td>
+        <td><%= link_to 'Delete', {}, class: 'linksDesign', onclick: "deleteResource(event, #{r.id}, this)" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

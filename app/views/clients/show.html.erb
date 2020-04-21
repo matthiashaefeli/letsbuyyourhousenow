@@ -43,5 +43,6 @@
   </table>
 </div>
 <div class="editClient"></div>
-<%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'clientLinks' %><br>
-<%= link_to 'Back', clients_path, class: 'clientLinks backLink' %>
+<%= link_to 'Edit Client', '#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'linksDesign' %><br>
+<%= link_to 'Delete this Client', client_path(@client), method: 'delete', class: 'linksDesign backLink', data: { confirm: 'Are you sure?' } %><br>
+<%= link_to 'Back', clients_path, class: 'linksDesign backLink' %>

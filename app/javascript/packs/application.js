@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("custom/client")
+require("custom/resource")
 window.$ = $
 
 

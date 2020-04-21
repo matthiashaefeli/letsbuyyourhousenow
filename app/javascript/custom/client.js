@@ -4,9 +4,6 @@ window.addClient = function(e,form) {
     url: form.action,
     method: form.method,
     data: $(form).serialize(),
-    beforeSend: function() {
-      $('.errorDiv').html('').hide();
-    },
     success: function(response) {
       if (response.message == 'saved') {
         $('.clientForm').hide();
@@ -58,8 +55,6 @@ window.updateClient = function(e, form) {
     data: $(form).serialize(),
     success: function(response) {
       $('.clientHome').html(response);
-      // $('.showClient').html(response).show();
-      // $('.editClient').html('');
     }
   })
 }

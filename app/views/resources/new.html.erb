@@ -1,0 +1,13 @@
+<%= form_for(@resource, html: { onsubmit: 'addResource(event, this)' }) do |f| %>
+  <div>
+    <div>
+      <%= f.text_field :name, placeholder: 'Name' %>
+      <%= f.text_field :url, placeholder: 'Link' %>
+    </div>
+    <div>
+      <div>
+      <%= f.submit 'Save', id: 'resourceSubmitButton' %>
+      <%= f.submit 'Cancel', onclick: 'cancelResourceNew(event)', id: 'resourceCancelButton' %>
+    </div>
+  </div>
+<% end %>

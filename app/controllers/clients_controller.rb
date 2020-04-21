@@ -42,10 +42,16 @@ class ClientsController < ApplicationController
     render 'show'
   end
 
+  def destroy
+    client = Client.find(params[:id])
+    client.delete
+    redirect_to clients_path
+  end
+
   private
 
   def authorization
-    if current_user.nil?
+    unless current_user && current_user.active && current_user.admin
       redirect_to root_path
     end
   end
