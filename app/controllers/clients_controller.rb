@@ -20,6 +20,8 @@ class ClientsController < ApplicationController
     client = Client.new(client_params)
     if client.valid?
       client.save
+      ClientMailer.with(client: client).new_client_email.deliver_later
+      ClientMailer.with(client: client).welcome_client.deliver_later
       render json: { message: 'saved' }
     else
       errors = client.errors.full_messages
