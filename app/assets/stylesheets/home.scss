@@ -103,6 +103,7 @@
 }
 
 .howItWorks {
+  height: 70vh;
   text-align: center;
 }
 
@@ -116,8 +117,8 @@
 }
 
 .homeInfo {
-  padding: 50px;
-  margin-top: 50px;
+  padding-top: 60px;
+  height: 50vh;
   background-color: rgb(240,240,240);
 }
 
@@ -134,4 +135,23 @@
 
 .wrapper>div>p>a:hover {
   color: green;
+}
+
+.about {
+  padding-top: 40px;
+  background: url(/images/house2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.aboutText {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  background-color: rgba(128,128,128,0.9);
 }
