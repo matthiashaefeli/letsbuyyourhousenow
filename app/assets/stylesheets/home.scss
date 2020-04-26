@@ -154,3 +154,62 @@
   margin: auto;
   background-color: rgba(128,128,128,0.9);
 }
+
+@media only screen and (max-device-width: 480px) {
+  .title {
+    font-size: 7vw;
+  }
+
+  .clientForm {
+    width: 95%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container>div {
+    width: 95%;
+  }
+
+  .howItWorks {
+    height: 100%;
+  }
+
+  .about {
+    height: 100%;
+    padding: 10px;
+  }
+
+  .aboutText {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 900px) {
+  .home {
+    height: 200vh;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container>div {
+    width: 95%;
+  }
+
+  .howItWorks {
+    height: 100%;
+  }
+
+  .about {
+    height: 100%;
+    padding: 10px;
+  }
+
+  .aboutText {
+    width: 80%;
+  }
+
+}
