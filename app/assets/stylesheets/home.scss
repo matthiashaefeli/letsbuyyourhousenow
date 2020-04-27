@@ -93,13 +93,27 @@
 }
 
 #clientResponse {
-  padding: 10px;
   display: none;
+  padding-top: 30px;
   text-align: center;
-  background: linear-gradient(53deg, #a5fdff, #f3ffff);
-  color: black;
   width: 40%;
   margin: auto;
+}
+
+#clientResponse > h1 {
+  padding: 7px;
+  margin-bottom: -1px;
+  background-color: black;
+  color: yellow;
+}
+
+#clientResponseIntern {
+  display: none;
+  padding: 30px;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  background: linear-gradient(53deg, #a5fdff, #f3ffff);
 }
 
 .howItWorks {
@@ -184,6 +198,14 @@
   .aboutText {
     width: 80%;
   }
+
+  #clientResponse {
+    width: 95%;
+  }
+
+  .clientDetailsTable {
+    font-size: 50px;
+  }
 }
 
 @media only screen and (min-device-width: 600px) and (max-device-width: 900px) {
@@ -210,6 +232,14 @@
 
   .aboutText {
     width: 80%;
+  }
+
+  .clientForm {
+    width: 80%;
+  }
+
+  #clientResponse {
+    width: 60%;
   }
 
 }

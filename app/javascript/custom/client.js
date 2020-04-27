@@ -7,7 +7,7 @@ window.addClient = function(e,form) {
     success: function(response) {
       if (response.message == 'saved') {
         $('.clientForm').hide();
-        $('#clientResponse').show();
+        $('#clientResponse, #clientResponseIntern').show();
         $('#newClientCancelButton').hide();
       } else {
         $('#client_first_name, #client_last_name, #client_email, #client_tel').css('background-color', 'white');
@@ -84,7 +84,7 @@ window.filterClientsTable = function(select) {
     data: { status: selected },
     success: function(response) {
       $('.clientsTableDiv').remove();
-      $(response).insertAfter('#clientResponse');
+      $(response).insertAfter('#clientResponseIntern');
     }
   })
 }
