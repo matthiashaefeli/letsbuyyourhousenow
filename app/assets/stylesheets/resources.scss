@@ -9,3 +9,15 @@
 .resourcesTable {
   margin: 20px;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .resourcesTable {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 900px) {
+  .resourcesTable {
+    font-size: 40px;
+  }
+}

@@ -169,6 +169,11 @@
   background-color: rgba(128,128,128,0.9);
 }
 
+.signIn {
+  text-align: center;
+  margin-top:30px;
+}
+
 @media only screen and (max-device-width: 480px) {
   .title {
     font-size: 6.5vw;
@@ -206,6 +211,15 @@
   .clientDetailsTable {
     font-size: 50px;
   }
+
+  .signIn {
+    font-size: 30px;
+  }
+
+  .actions>input {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (min-device-width: 600px) and (max-device-width: 900px) {
@@ -240,6 +254,15 @@
 
   #clientResponse {
     width: 60%;
+  }
+
+  .signIn {
+    font-size: 30px;
+  }
+
+  .actions>input {
+    font-size: 30px;
+    margin-bottom: 30px;
   }
 
 }
