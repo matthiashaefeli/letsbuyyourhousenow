@@ -1,0 +1,20 @@
+<div class="homeInfo">
+  <section class="wrapper">
+    <article>
+      <h3>LetsBuyYourHouseNow.now</h3>
+      <p>Copyright 2020</p>
+      <p>All Rights Reserved</p>
+    </article>
+    <article>
+      <p>How It Works</p>
+      <p>FAQ</p>
+      <p>Company Info</p>
+      <% if current_user %>
+        <p><%= link_to 'SignOut', destroy_user_session_path, method: :delete %></p>
+        <p><%= link_to 'Clients', clients_path %></p>
+      <% else %>
+        <p><%= link_to 'Sign In', home_login_path %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -88,3 +88,26 @@ window.filterClientsTable = function(select) {
     }
   })
 }
+
+window.changeLanguage = function(text) {
+  const language = $(text).html();
+  $(text).html('English')
+  if (language == 'Español') {
+    changeFormLanguage();
+    $('.howItWorks, .about').hide();
+    $('.howItWorksSpanish, .aboutSpanish').show();
+  } else {
+    location.reload();
+  }
+}
+
+function changeFormLanguage() {
+  $('.clientForm').find('h1').html('Llena la forma<br> y nos comunicaremos contigo<br> en 24 horas.')
+  $('#client_first_name').attr('placeholder', 'Nombre');
+  $('#client_last_name').attr('placeholder', 'Apellio');
+  $('#client_address').attr('placeholder', 'Direćion');
+  $('#client_city').attr('placeholder', 'Ciudad');
+  $('#client_state').attr('placeholder', 'Estado');
+  $('#client_zip').attr('placeholder', 'CP');
+  $('#clientSubmit').val('Recibe Su Offerta');
+}

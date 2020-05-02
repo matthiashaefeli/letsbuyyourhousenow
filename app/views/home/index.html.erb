@@ -1,5 +1,5 @@
 <div class="home">
-  <h1 class="title">LetsBuyYourHouseNow.com</h1>
+  <h1 class="title">LetsBuyYourHouseNow.com <span class="spanischText" onclick="changeLanguage(this)">Español</span></h1>
   <div class="clientForm">
     <h1>Fill Out The Form Below And<br>
         We’ll Chat With You Within 24 Hours</h1>
@@ -9,121 +9,9 @@
     <h1>Thank you for your submit<br> We will contact you soon.</h1>
   </div>
 </div>
-<div class="howItWorks">
-  <h1>How It Works</h1>
-  <section class="container">
-    <article>
-      <img src="images/keyboard.jpeg" alt="" class="howItWorksImages">
-      <h3>Enter your property information.</h3>
-      <p>
-        Just fill out the form above,
-        enter your information, and you’ll be on your way to quick cash.
-        No need to make repairs!
-        Of course, you can call us, too. We’re ready to help.
-      </p>
-    </article>
-    <article>
-      <img src="images/phone.jpg" alt="" class="howItWorksImages">
-      <h3>Schedule a time to meet.</h3>
-      <p>
-        After receiving your info,
-        we’ll contact you to set up a time to view your house.
-        With letsbuyyourhousenow.com, we do all the work - there’s no need to
-        fill out long forms or upload photos.
-      </p>
-    </article>
-    <article>
-      <img src="images/offer.jpg" alt="" class="howItWorksImages">
-      <h3>Get a no-obligation cash offer.</h3>
-      <p>
-        Once we’ve seen your house,
-        we’ll be ready to make a REAL cash
-        offer - not just a website estimate like others.
-        We offer the most cash we can,
-        and there’s no obligation on your part!
-      </p>
-    </article>
-    <article>
-      <img src="images/handshake.jpg" alt="" class="howItWorksImages">
-      <h3>Accept, and we’ll buy your house quickly.</h3>
-      <p>
-        Like our offer?
-        Great! We can close as fast as next week or whenever it’s best for you. \
-        There are no commissions, no closing costs, and no hassle. This is
-        The Easy Way to Sell Today™.  
-      </p>
-    </article>
-  </section>
-</div>
-<div class="about">
-  <section class="aboutText">
-    <h2>We Buy Properties In Any Condition. We Buy “AS IS.”  We Make Cash Offers! </h2>
-    <p>
-      Sometimes we are in some situations that we don’t want to face.<br>
-      They make us feel stressful, anxious, upset…… some of this situation are:
-    </p>
-    <ul>
-      <li>Facing foreclosure.</li>
-      <li>Going through divorce.</li>
-      <li>Medical bills.</li>
-      <li>Job relocation.</li>
-      <li>Loss of a family member.</li>
-      <li>Unwanted rental property.</li>
-      <li>Vacant property.</li>
-    </ul>
-    <p>Not so stressful but also you may be facing:</p>
-    <ul>
-      <li>Inherit an Unwanted Property.</li>
-      <li>You want to avoid Paying Realtor Commissions.</li>
-      <li>You Have Little Or No Equity And Need To Sell</li>
-    </ul>
-    <p>
-      If you are facing one of this stressful situations -
-      or others that are not so stressful- and you know you could benefit
-      from selling your house or listening to different exit strategies from creative,
-      sincere and problem-solvers investors please contact us.
-      We want to provide the right solution for you.
-    </p>
-    <p>We all deserve to be listened and to get options.</p>
-    <p>
-      Every situation is different, you may be in a hurry to sell,
-      you may or may not have equity on your house,
-      you may have a property that you didn’t want,
-      or one that needs a lot of work,
-      one that is in substandard situation…. Whatever 
-      your situation is,  we want to provide a cash offer or the option that makes more sense and provides a
-      BETTER SOLUTION YOU.
-    </p>
-    <p>
-      Tell us about your, we are here to listen to you.
-    </p>
-    <p>
-      All of this 100% free to you
-      (we don’t charge you any fees).
-      100% no hassle. 100% no obligation. No commitment.
-    </p>
-  </section>
-</div>
-<div class="homeInfo">
-  <section class="wrapper">
-    <article>
-      <h3>LetsBuyYourHouseNow.now</h3>
-      <p>Copyright 2020</p>
-      <p>All Rights Reserved</p>
-    </article>
-    <article>
-      <p>How It Works</p>
-      <p>FAQ</p>
-      <p>Company Info</p>
-      <% if current_user %>
-        <p><%= link_to 'SignOut', destroy_user_session_path, method: :delete %></p>
-        <p><%= link_to 'Clients', clients_path %></p>
-      <% else %>
-        <p><%= link_to 'Sign In', home_login_path %></p>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render partial: 'how' %>
+<%= render partial: 'about' %>
+<%= render partial: 'info' %>
 <script type="text/javascript">
   var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1; //&& ua.indexOf("mobile");
   if(isAndroid) {

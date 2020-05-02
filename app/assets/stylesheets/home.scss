@@ -8,7 +8,8 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  // height: 100vh;
+  padding: 0 0 40px 0;
 }
 
 .title {
@@ -16,6 +17,15 @@
   padding: 3px;
   margin: auto;
   text-align: center;
+}
+
+.spanischText {
+  float: right;
+  font-size: 12px;
+}
+
+.spanischText:hover {
+  cursor: pointer;
 }
 
 .clientForm {
@@ -116,13 +126,24 @@
   background: linear-gradient(53deg, #a5fdff, #f3ffff);
 }
 
-.howItWorks {
-  height: 70vh;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container>article {
+  max-width: 200px;
+}
+
+.howItWorks,
+.howItWorksSpanish {
+  padding: 40px 0;
   text-align: center;
 }
 
 .howItWorksImages {
-  width: 100px;
+  width: 150px;
   height: 100px;
 }
 
@@ -131,8 +152,7 @@
 }
 
 .homeInfo {
-  padding-top: 60px;
-  height: 50vh;
+  padding: 60px 0;
   background-color: rgb(240,240,240);
 }
 
@@ -151,14 +171,14 @@
   color: green;
 }
 
-.about {
-  padding-top: 40px;
+.about,
+.aboutSpanish {
+  padding: 40px 0;
   background: url(/images/house2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 110vh;
 }
 
 .aboutText {
@@ -187,17 +207,9 @@
     flex-direction: column;
   }
 
-  .container>div {
+  .container>article {
     width: 95%;
-  }
-
-  .howItWorks {
-    height: 100%;
-  }
-
-  .about {
-    height: 100%;
-    padding: 10px;
+    margin: auto;
   }
 
   .aboutText {
@@ -223,37 +235,33 @@
 }
 
 @media only screen and (min-device-width: 600px) and (max-device-width: 900px) {
-  .home {
-    height: 200vh;
+  .title {
+    font-size: 6.5vw;
+  }
+
+  .clientForm {
+    width: 95%;
   }
 
   .container {
     flex-direction: column;
   }
 
-  .container>div {
+  .container>article {
     width: 95%;
-  }
-
-  .howItWorks {
-    height: 100%;
-  }
-
-  .about {
-    height: 100%;
-    padding: 10px;
+    margin: auto;
   }
 
   .aboutText {
     width: 80%;
   }
 
-  .clientForm {
-    width: 80%;
+  #clientResponse {
+    width: 95%;
   }
 
-  #clientResponse {
-    width: 60%;
+  .clientDetailsTable {
+    font-size: 50px;
   }
 
   .signIn {
