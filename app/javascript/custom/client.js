@@ -109,5 +109,5 @@ function changeFormLanguage() {
   $('#client_city').attr('placeholder', 'Ciudad');
   $('#client_state').attr('placeholder', 'Estado');
   $('#client_zip').attr('placeholder', 'CP');
-  $('#clientSubmit').val('Recibe Su Offerta');
+  $('#clientSubmit').val('Reciba Su Offerta');
 }
