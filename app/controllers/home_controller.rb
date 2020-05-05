@@ -3,6 +3,9 @@ class HomeController < ApplicationController
 
   def index
     @client = Client.new
+    page_view_index = PageView.find_by_title('home_index')
+    page_view_index.count += 1
+    page_view_index.save
   end
 
   def login
