@@ -108,6 +108,8 @@
 }
 
 #editClientLink,
+#showClientImagesLink,
+#deleteClientLink,
 .backLink {
   margin-left: 20px;
 }
@@ -116,7 +118,12 @@
   margin: 20px;
 }
 
-@media only screen and (max-device-width: 480px) {
+.img_preview {
+  width: 100px;
+  height: auto;
+}
+
+@media only screen and (max-device-width: 900px) {
   .navBar {
     padding-top: 50px;
     font-size: 60px;
@@ -180,17 +187,9 @@
   .linksDesign {
     font-size: 50px;
   }
-}
 
-@media only screen and (min-device-width: 480px) and (max-device-width: 900px) {
-  .navBar {
-    padding-top: 50px;
-    font-size: 60px;
-    width: 100%;
-    height: 150px;
-  }
-
-  .mobilNot {
-    display: none;
+  .showLinks div {
+    padding: 20px;
   }
 }
+

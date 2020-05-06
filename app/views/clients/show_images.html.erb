@@ -1,0 +1,26 @@
+<h1 class="clientsTitle"><%= @client.first_name %> <%= @client.last_name %></h1>
+<div class="clientImages">
+  <div class="ClientEditForm">
+    <%= form_for :client_images, url: "/clients/#{@client.id}", method: "patch" do |f| %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <table>
+        <tr>
+          <td>
+            <%= f.label :uplodad_images %>
+          </td>
+          <td>
+            <%= f.file_field :images, multiple: true %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.submit 'upload' %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+  <div class="ClientEditForm">
+    <% @client.images.each do |image| %>
+      <%= image_tag(image, :class => "img_preview") %>
+    <% end %>
+  </div>
+</div>

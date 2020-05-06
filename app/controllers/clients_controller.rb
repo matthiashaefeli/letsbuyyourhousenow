@@ -39,15 +39,32 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client = Client.find(params[:client_id])
-    @client.update_attributes(edit_client_params)
-    render 'show'
+    if params[:id] && params[:client_images]
+      client = Client.find(params[:id])
+
+      params[:client_images][:images].each do |image|
+        client.images.attach(image)
+      end
+
+      client.save
+      redirect_to "/client/show_images/#{client.id}"
+
+    elsif params[:client_id]
+      @client = Client.find(params[:client_id])
+      @client.update_attributes(edit_client_params)
+      render 'show' and return
+    end
+
   end
 
   def destroy
     client = Client.find(params[:id])
     client.delete
     redirect_to clients_path
+  end
+
+  def show_images
+    @client = Client.find(params[:id])
   end
 
   private

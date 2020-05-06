@@ -43,10 +43,23 @@
   </table>
 </div>
 <div class="editClient"></div>
-<%= link_to('#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'linksDesign') do %>
-  <span class="linksDesign"><i class="fas fa-user-edit"></i> Edit Client</span>
-<% end %>
-<%= link_to(client_path(@client), class: 'linksDesign', id: 'deleteClientLink', method: 'delete', data: { confirm: 'Are you sure?' }) do %><br>
-  <span class='linksDesign backLink'><i class="far fa-trash-alt fa-xs" style="margin-top=1px;"></i> Delete Client</span>
-<% end %><br>
-<%= link_to 'Back', clients_path, class: 'linksDesign backLink' %>
+<div class="showLinks">
+    <div>
+    <%= link_to("/client/show_images/#{@client.id}", id: 'showClientImagesLink', class: 'linksDesign') do %>
+      <span><i class="far fa-images fa-xs"></i> Show Images</span>
+    <% end %>
+    </div>
+     <div>
+    <%= link_to('#', onclick: "editClient(event, #{@client.id})", id: 'editClientLink', class: 'linksDesign') do %>
+      <span><i class="fas fa-user-edit fa-xs"></i> Edit Client</span>
+    <% end %>
+    </div>
+     <div>
+    <%= link_to(client_path(@client), id: 'deleteClientLink', class: 'linksDesign', method: 'delete', data: { confirm: 'Are you sure?' }) do %>
+      <span><i class="far fa-trash-alt fa-xs"></i> Delete Client</span>
+    <% end %>
+    </div>
+     <div>
+    <%= link_to 'Back', clients_path, class: 'linksDesign backLink' %>
+    </div>
+</div>
