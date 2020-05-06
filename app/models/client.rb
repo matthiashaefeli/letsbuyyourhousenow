@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+  has_many :images
   validate :validate_names
   validate :email_or_tel
   validate :validate_email

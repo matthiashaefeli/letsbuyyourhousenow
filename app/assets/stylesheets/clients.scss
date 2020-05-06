@@ -133,6 +133,24 @@
     font-size: 100px;
   }
 
+  .ClientEditForm td {
+    font-size: 300%;
+  }
+
+  .ClientEditForm input {
+    font-size: 0.8em;
+    border: 1px solid black;
+  }
+
+  .ClientEditForm textarea {
+    font-size: 0.8em;
+    border: 1px solid black;
+  }
+
+  .ClientEditForm select {
+    font-size: 0.8em;
+  }
+
   .newClientLinkDiv {
     font-size: 60px;
     margin-bottom: 60px;
