@@ -1,5 +1,6 @@
 <h1 class="clientsTitle">Page View Results</h1>
 <div class="clientsTableDiv">
+  <h3 class="tableTitle">Last 5 Days</h3>
   <table class="clientsTable">
     <thead>
       <tr>
@@ -10,6 +11,25 @@
     </th>
     <tbody>
       <% @page_view_results.each do |pvr| %>
+        <tr>
+          <td><%= pvr.day.to_date %></td>
+          <td><%= pvr.title %></td>
+          <td><%= pvr.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <h3 class="tableTitle">Best 5 Days</h3>
+  <table class="clientsTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Url</th>
+        <th>Clicks</th>
+      </tr>
+    </th>
+    <tbody>
+      <% @page_view_results_best_days.each do |pvr| %>
         <tr>
           <td><%= pvr.day.to_date %></td>
           <td><%= pvr.title %></td>

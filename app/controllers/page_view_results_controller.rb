@@ -3,7 +3,8 @@ class PageViewResultsController < ApplicationController
   before_action :authorization
 
   def index
-    @page_view_results = PageViewResult.last(10)
+    @page_view_results = PageViewResult.last(5)
+    @page_view_results_best_days = PageViewResult.order(count: :desc).last(5)
   end
 
   private
