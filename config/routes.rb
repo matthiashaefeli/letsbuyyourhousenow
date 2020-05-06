@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :resources
   resources :clients
+  resources :page_view_results
   devise_for :users
   root 'home#index'
   get 'home/login', to: 'home#login'
