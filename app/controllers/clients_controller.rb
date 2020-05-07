@@ -46,15 +46,15 @@ class ClientsController < ApplicationController
     elsif params[:id]
       client = Client.find(params[:id])
 
-      redirect_to client_show_images_path(client.id, error_message: 'Error: Please select a Image') and return if params[:client_images].nil?
+      redirect_to client_show_images_path(client.id, error_message: 'Error: Please select a Image!') and return if params[:client_images].nil?
 
       params[:client_images][:images].each do |image|
-        redirect_to client_show_images_path(client.id, error_message: 'Error: Image to Big') and return if image.size/1000 > 1000
+        redirect_to client_show_images_path(client.id, error_message: 'Error: Image to Big!') and return if image.size/1000 > 1000
 
         client.images.attach(image)
         client.save
       end
-      redirect_to client_show_images_path(client.id, success_message: 'Success: The Images are up')
+      redirect_to client_show_images_path(client.id, success_message: 'Success: The Images are up!')
     end
 
   end
@@ -69,6 +69,12 @@ class ClientsController < ApplicationController
     @error_message = params[:error_message].nil? ? nil : params[:error_message]
     @success_message = params[:success_message].nil? ? nil : params[:success_message]
     @client = Client.find(params[:id])
+  end
+
+  def delete_image
+    client = Client.find(params[:client_id])
+    client.images.find(params[:id]).purge
+    redirect_to client_show_images_path(client.id, success_message: 'Success: The Image was removed!')
   end
 
   private

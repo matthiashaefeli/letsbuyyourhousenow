@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  has_many_attached :images
+  has_many_attached :images, dependent: :destroy
   validate :validate_names
   validate :email_or_tel
   validate :validate_email
