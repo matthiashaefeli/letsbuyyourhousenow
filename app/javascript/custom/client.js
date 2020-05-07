@@ -45,12 +45,13 @@ window.cancelClientEdit = function(e) {
   $('.editClient').html('');
 }
 
-window.updateClient = function(e, form) {
+window.updateClient = function(e, button) {
   e.preventDefault();
+  const form = $(button).closest('form');
   $.ajax({
-    url: form.action,
-    method: form.method,
-    data: $(form).serialize(),
+    url: form[0].action,
+    method: form[0].method,
+    data: form.serialize(),
     success: function(response) {
       $('.clientHome').html(response);
     }

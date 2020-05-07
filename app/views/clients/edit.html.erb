@@ -1,5 +1,5 @@
 <div class="ClientEditForm">
-  <%= form_for :editclient, url: "update", method: "patch", onsubmit: "editClient(event, this)" do |f| %>
+  <%= form_for :editclient, url: "update", method: "patch" do |f| %>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="client_id" value="<%= @client.id %>">
     <table>
@@ -103,7 +103,7 @@
         <td>
         </td>
         <td>
-          <%= f.submit 'Save' %><%= f.submit 'Cancel', onclick: 'cancelClientEdit(event)' %>
+          <%= f.submit 'Save', onclick: 'updateClient(event, this)' %><%= f.submit 'Cancel', onclick: 'cancelClientEdit(event)' %>
         </td>
       </tr>
     </table>

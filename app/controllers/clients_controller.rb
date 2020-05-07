@@ -39,7 +39,11 @@ class ClientsController < ApplicationController
   end
 
   def update
-    if params[:id]
+    if params[:client_id]
+      @client = Client.find(params[:client_id])
+      @client.update_attributes(edit_client_params)
+      render 'show', layout: false and return
+    elsif params[:id]
       client = Client.find(params[:id])
 
       redirect_to client_show_images_path(client.id, error_message: 'Error: Please select a Image') and return if params[:client_images].nil?
@@ -51,10 +55,6 @@ class ClientsController < ApplicationController
         client.save
       end
       redirect_to "/clients/#{client.id}"
-    else params[:client_id]
-      @client = Client.find(params[:client_id])
-      @client.update_attributes(edit_client_params)
-      render 'show' and return
     end
 
   end
