@@ -1,7 +1,10 @@
 <h1 class="clientsTitle"><%= @client.first_name %> <%= @client.last_name %></h1>
 <div class="clientImages">
-  <% if !@message.nil? %>
-    <div class="errorMessage"><%= @message %></div>
+  <% if !@error_message.nil? %>
+    <div class="errorMessage"><%= @error_message %></div>
+  <% end %>
+  <% if !@success_message.nil? %>
+    <div class="successMessage"><%= @success_message %></div>
   <% end %>
   <div class="ClientEditForm">
     <%= form_for :client_images, url: client_path(@client), method: "patch" do |f| %>

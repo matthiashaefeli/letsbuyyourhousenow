@@ -54,7 +54,7 @@ class ClientsController < ApplicationController
         client.images.attach(image)
         client.save
       end
-      redirect_to "/clients/#{client.id}"
+      redirect_to client_show_images_path(client.id, success_message: 'Success: The Images are up')
     end
 
   end
@@ -66,7 +66,8 @@ class ClientsController < ApplicationController
   end
 
   def show_images
-    @message = params[:error_message].nil? ? nil : params[:error_message]
+    @error_message = params[:error_message].nil? ? nil : params[:error_message]
+    @success_message = params[:success_message].nil? ? nil : params[:success_message]
     @client = Client.find(params[:id])
   end
 
