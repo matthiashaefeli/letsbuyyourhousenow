@@ -39,17 +39,19 @@ class ClientsController < ApplicationController
   end
 
   def update
-    if params[:id] && params[:client_images]
+    if params[:id]
       client = Client.find(params[:id])
 
+      redirect_to client_show_images_path(client.id, error_message: 'Error: Please select a Image') and return if params[:client_images].nil?
+
       params[:client_images][:images].each do |image|
+        redirect_to client_show_images_path(client.id, error_message: 'Error: Image to Big') and return if image.size/1000 > 1000
+
         client.images.attach(image)
+        client.save
       end
-
-      client.save
-      redirect_to "/client/show_images/#{client.id}"
-
-    elsif params[:client_id]
+      redirect_to "/clients/#{client.id}"
+    else params[:client_id]
       @client = Client.find(params[:client_id])
       @client.update_attributes(edit_client_params)
       render 'show' and return
@@ -64,6 +66,7 @@ class ClientsController < ApplicationController
   end
 
   def show_images
+    @message = params[:error_message].nil? ? nil : params[:error_message]
     @client = Client.find(params[:id])
   end
 

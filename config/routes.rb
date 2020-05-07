@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/login', to: 'home#login'
   get 'client/client_entries', to: 'clients#client_entries'
-  get 'client/show_images/:id', to: 'clients#show_images'
+  get 'client/show_images/:id', to: 'clients#show_images', as: 'client_show_images'
 end

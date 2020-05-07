@@ -1,7 +1,10 @@
 <h1 class="clientsTitle"><%= @client.first_name %> <%= @client.last_name %></h1>
 <div class="clientImages">
+  <% if !@message.nil? %>
+    <div class="errorMessage"><%= @message %></div>
+  <% end %>
   <div class="ClientEditForm">
-    <%= form_for :client_images, url: "/clients/#{@client.id}", method: "patch" do |f| %>
+    <%= form_for :client_images, url: client_path(@client), method: "patch" do |f| %>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <table>
         <tr>
@@ -20,7 +23,8 @@
   </div>
   <div class="ClientEditForm">
     <% @client.images.each do |image| %>
-      <%= image_tag(image, :class => "img_preview") %>
+      <%= link_to image_tag(image, class: 'img_preview'), image %>
+      <%= image_tag(image, class: 'img_preview') %>
     <% end %>
   </div>
 </div>

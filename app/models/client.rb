@@ -6,6 +6,8 @@ class Client < ApplicationRecord
 
   STATUS_ARRAY = ['New', 'Waiting for answer', 'On Hold', 'Working on', 'Offer sent', 'Deal', 'Finished']
 
+  private
+
   def validate_email
     errors.add(:base, 'email') if email.length > 0 && (email =~ /^.+@.+$/).nil?
   end

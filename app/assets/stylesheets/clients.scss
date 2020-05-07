@@ -123,6 +123,12 @@
   height: auto;
 }
 
+.errorMessage {
+  color: red;
+  font-weight: bold;
+  margin: 20px;
+}
+
 @media only screen and (max-device-width: 900px) {
   .navBar {
     padding-top: 50px;
