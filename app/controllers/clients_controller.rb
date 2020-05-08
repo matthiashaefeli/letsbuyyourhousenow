@@ -49,7 +49,7 @@ class ClientsController < ApplicationController
       redirect_to client_show_images_path(client.id, error_message: 'Error: Please select a Image!') and return if params[:client_images].nil?
 
       params[:client_images][:images].each do |image|
-        redirect_to client_show_images_path(client.id, error_message: 'Error: Image to Big!') and return if image.size/1000 > 1000
+        redirect_to client_show_images_path(client.id, error_message: 'Error: Image to Big!') and return if image.size/1000 > 2000
 
         client.images.attach(image)
         client.save

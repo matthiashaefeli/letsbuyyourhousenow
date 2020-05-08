@@ -10,14 +10,22 @@
   margin: 20px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 800px) {
   .resourcesTable {
     font-size: 40px;
   }
-}
 
-@media only screen and (min-device-width: 480px) and (max-device-width: 900px) {
-  .resourcesTable {
-    font-size: 40px;
+  #new_resource>div>div {
+    font-size: 300%;
+  }
+
+  #new_resource input {
+    font-size: 0.8em;
+    border: 1px solid black;
+  }
+
+  #new_resource textarea {
+    font-size: 0.8em;
+    border: 1px solid black;
   }
 }
