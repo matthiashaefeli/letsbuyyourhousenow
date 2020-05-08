@@ -77,6 +77,10 @@ class ClientsController < ApplicationController
     redirect_to client_show_images_path(client.id, success_message: 'Success: The Image was removed!')
   end
 
+  def show_image
+    binding.pry
+  end
+
   private
 
   def authorization
