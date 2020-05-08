@@ -27,6 +27,7 @@
   <div class="ClientEditForm">
     <% @client.images.each do |image| %>
       <div>
+        <%= image_tag image.variant(resize_to_limit: [100, nil]) %>
         <%= link_to image_tag(image, class: 'img_preview'), image %>
         <%= link_to delete_image_path(image, client_id: @client.id) do %>
           <span><i class="far fa-trash-alt fa-xs"></i></span>

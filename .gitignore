@@ -25,6 +25,7 @@
 
 # ignore gmail
 /config/gmail.yml
+/config/kuebel.yml
 
 /public/packs
 /public/packs-test

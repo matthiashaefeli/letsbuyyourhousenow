@@ -25,10 +25,15 @@ module Laura
     config.load_defaults 6.0
 
     config.before_configuration do
-      env_file = File.join(Rails.root, 'config', 'gmail.yml')
-      YAML.load(File.open(env_file)).each do |key, value|
+      g_env_file = File.join(Rails.root, 'config', 'gmail.yml')
+      YAML.load(File.open(g_env_file)).each do |key, value|
         ENV[key.to_s] = value
-      end if File.exists?(env_file)
+      end if File.exists?(g_env_file)
+
+      a_env_file = File.join(Rails.root, 'config', 'kuebel.yml')
+      YAML.load(File.open(a_env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(a_env_file)
     end
 
     # Settings in config/environments/* take precedence over those specified here.
