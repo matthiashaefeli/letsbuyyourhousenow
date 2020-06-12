@@ -70,5 +70,31 @@ RSpec.describe 'Client', type: :system do
       click_on 'Get Your Offer'
       expect(page).to have_text('Thank you for your submit')
     end
+
+    it 'clients cant register himself, missing first name' do
+      visit root_path
+      fill_in 'client_last_name', with: 'mylastname'
+      fill_in 'client_tel', with: '123456789'
+      click_on 'Get Your Offer'
+      expect(page.find(:css, '#client_first_name')[:style]).to eq('background-color: yellow;')
+    end
+
+    it 'clients cant register himself, missing last name' do
+      visit root_path
+      fill_in 'client_first_name', with: 'myfirstname'
+      click_on 'Get Your Offer'
+      sleep(0.5)
+      expect(page.find(:css, '#client_last_name')[:style]).to eq('background-color: yellow;')
+    end
+
+    it 'clients cant register himself, missing email and tel' do
+      visit root_path
+      fill_in 'client_first_name', with: 'myfirstname'
+      fill_in 'client_last_name', with: 'mylastname'
+      click_on 'Get Your Offer'
+      sleep(0.5)
+      expect(page.find(:css, '#client_email')[:style]).to eq('background-color: yellow;')
+      expect(page.find(:css, '#client_tel')[:style]).to eq('background-color: yellow;')
+    end
   end
 end
