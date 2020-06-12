@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Client', type: :system do
+  let!(:page_view) { FactoryBot.create(:page_view) }
   describe 'create new client' do
 
     before(:each) do
@@ -57,6 +58,17 @@ RSpec.describe 'Client', type: :system do
       click_on 'Save'
       expect(page.find(:css, '#client_email')[:style]).to eq('background-color: yellow;')
       expect(page.find(:css, '#client_tel')[:style]).to eq('background-color: yellow;')
+    end
+  end
+
+  describe 'client register' do
+    it 'clients register himself' do
+      visit root_path
+      fill_in 'client_first_name', with: 'myfirstname'
+      fill_in 'client_last_name', with: 'mylastname'
+      fill_in 'client_tel', with: '123456789'
+      click_on 'Get Your Offer'
+      expect(page).to have_text('Thank you for your submit')
     end
   end
 end
