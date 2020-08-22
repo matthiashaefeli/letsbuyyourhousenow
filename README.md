@@ -1,21 +1,26 @@
-# README
+# Lets Buy Your House Now
 
-Things you may want to cover:
+Web app for Realtor Business. Visitors fill out the form and receive a welcome email.
+Client will be created after Visitor fill out the form.
+User has access to Client data. Users receive an email when a new customer has registered.
+User can upload images to the clients account.
+
+## Requirements
 
 ruby 2.7.0
 rails 6.0
 
-Clone Repo
-Bundle install
-Create DB
-Ready to go
+## How to set up locally
 
-Rails app to register users
+```
+$ git clone
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+```
 
-Clients:
-Register form with email check.
+## Running the server
 
-Users:
-Automated email if new user
-Add pictures to client with aws c3 storage
-
+```
+$ rails s
+```
