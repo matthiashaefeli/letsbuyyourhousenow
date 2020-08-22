@@ -13,7 +13,7 @@ rails 6.0
 ## How to set up locally
 
 ```
-$ git clone
+$ git clone https://github.com/matthiashaefeli/letsbuyyourhousenow.git
 $ bundle install
 $ rails db:create
 $ rails db:migrate
