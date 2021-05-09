@@ -8,6 +8,6 @@ class ClientMailer < ApplicationMailer
   def welcome_client
     @client = params[:client]
 
-    mail(to: @client.email, subject: 'letsbuyyourhousenow.com')
+    mail(to: @client.email, subject: 'createforallinvestments.com')
   end
 end
