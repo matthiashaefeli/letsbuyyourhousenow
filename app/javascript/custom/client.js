@@ -105,7 +105,7 @@ window.changeLanguage = function(text) {
 function changeFormLanguage() {
   $('.clientForm').find('h1').html('Llena la forma<br> y nos comunicaremos contigo<br> en 24 horas.')
   $('#client_first_name').attr('placeholder', 'Nombre');
-  $('#client_last_name').attr('placeholder', 'Apellio');
+  $('#client_last_name').attr('placeholder', 'Apellido');
   $('#client_address').attr('placeholder', 'Direćion');
   $('#client_city').attr('placeholder', 'Ciudad');
   $('#client_state').attr('placeholder', 'Estado');
